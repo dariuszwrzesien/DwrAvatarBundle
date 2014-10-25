@@ -42,7 +42,7 @@ Add DwrAvatarBundle in your composer.json:
 ```js
 {
     "require": {
-        "dwr/avatar-bundle": "0.1"
+        "dwr/avatar-bundle": "0.2"
     }
 }
 ```
