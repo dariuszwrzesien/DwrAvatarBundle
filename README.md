@@ -149,3 +149,4 @@ public function indexAction()
 
 1. Make sure you have [GD](http://php.net/manual/en/book.image.php) installed on your web server.
     http://php.net/manual/en/function.gd-info.php
+
