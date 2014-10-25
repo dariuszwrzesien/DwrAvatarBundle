@@ -1,3 +1,5 @@
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/12b57070-5a37-4bdb-a8b3-aeddfdddcfff/mini.png)](https://insight.sensiolabs.com/projects/12b57070-5a37-4bdb-a8b3-aeddfdddcfff)
+
 DwrAvatarBundle
 ======================
 
