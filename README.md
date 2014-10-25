@@ -1,5 +1,5 @@
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/12b57070-5a37-4bdb-a8b3-aeddfdddcfff/big.png)](https://insight.sensiolabs.com/projects/12b57070-5a37-4bdb-a8b3-aeddfdddcfff)
-
+[![Build Status](https://travis-ci.org/dariuszwrzesien/DwrAvatarBundle.svg?branch=master)](https://travis-ci.org/dariuszwrzesien/DwrAvatarBundle)
 DwrAvatarBundle
 ======================
 
