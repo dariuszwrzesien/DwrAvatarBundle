@@ -12,9 +12,8 @@ class PlainAvatarTest extends PHPUnit_Framework_TestCase
         $result = $plainAvatar->getAvatar();
         
         $this->assertInstanceOf(
-                'Dwr\AvatarBundle\Model', 
-                $result,
-                'Method getAvatar() should returns Avatar instance. Instance of %s given.'
-                );
+            'Dwr\AvatarBundle\Model\Avatar', 
+            $result
+        );
     }
 }
