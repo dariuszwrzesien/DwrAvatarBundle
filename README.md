@@ -1,5 +1,7 @@
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/12b57070-5a37-4bdb-a8b3-aeddfdddcfff/big.png)](https://insight.sensiolabs.com/projects/12b57070-5a37-4bdb-a8b3-aeddfdddcfff)
+======================
 [![Build Status](https://travis-ci.org/dariuszwrzesien/DwrAvatarBundle.svg?branch=master)](https://travis-ci.org/dariuszwrzesien/DwrAvatarBundle)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dariuszwrzesien/DwrAvatarBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/dariuszwrzesien/DwrAvatarBundle/?branch=master)
 DwrAvatarBundle
 ======================
 
