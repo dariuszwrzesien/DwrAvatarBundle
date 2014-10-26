@@ -2,6 +2,7 @@
 ======================
 [![Build Status](https://travis-ci.org/dariuszwrzesien/DwrAvatarBundle.svg?branch=master)](https://travis-ci.org/dariuszwrzesien/DwrAvatarBundle)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dariuszwrzesien/DwrAvatarBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/dariuszwrzesien/DwrAvatarBundle/?branch=master)
+[![Coverage Status](https://coveralls.io/repos/dariuszwrzesien/DwrAvatarBundle/badge.png)](https://coveralls.io/r/dariuszwrzesien/DwrAvatarBundle)
 DwrAvatarBundle
 ======================
 
