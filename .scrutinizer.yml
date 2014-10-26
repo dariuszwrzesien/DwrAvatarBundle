@@ -15,5 +15,4 @@ tools:
     php_cpd:
         enabled: true
         excluded_dirs: [vendor]
-    external_code_coverage: true
 
