@@ -38,4 +38,23 @@ class PlainAvatarTest extends PHPUnit_Framework_TestCase
         unlink($file->getRealPath());
     }
     
+    public function testSaveReturnCorrectFilename()
+    {
+        $filename = 'image.jpg';
+        $file = $this->plainAvatar->save(__DIR__.'/', $filename);
+        
+        $this->assertSame($filename, $file->getFilename());
+        $this->assertFileExists($file->getPathname(), 'File doesn\'t exits');
+        unlink($file->getRealPath());
+    }
+    
+    public function testSettersAndGetters()
+    {
+        $this->plainAvatar->setWidth(5);
+        $this->plainAvatar->setHeight(5);
+        
+        $this->assertSame(5, $this->plainAvatar->getWidth());
+        $this->assertSame(5, $this->plainAvatar->getHeight());
+    }
+    
 }
