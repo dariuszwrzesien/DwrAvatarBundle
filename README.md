@@ -145,7 +145,7 @@ public function indexAction()
         $plainAvatar = $avatar->generate(new PlainAvatar(140, 140));
         
         return array(
-            'plainAvatar' => $plainAvatar->save('web/images/avatar/directory', '**image.jpg**')
+            'plainAvatar' => $plainAvatar->save('web/images/avatar/directory', 'image.jpg')
         );
     }
 ```
