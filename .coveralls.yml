@@ -1,2 +1,2 @@
-src_dir: lib
+src_dir: Model
 coverage_clover: build/logs/clover.xml
