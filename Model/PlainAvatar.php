@@ -7,12 +7,7 @@ class PlainAvatar extends Avatar {
     /**
      * @var int 
      */
-    protected $width;
-    
-    /**
-     * @var int 
-     */
-    protected $height;
+    protected $size;
     
     /**
      * @var string 
@@ -20,13 +15,11 @@ class PlainAvatar extends Avatar {
     protected $content;
 
     /**
-     * @param int $width
-     * @param int $height
+     * @param int $size
      */
-    public function __construct($width, $height) 
+    public function __construct($size) 
     {
-        $this->width = $width;
-        $this->height = $height;
+        $this->size = $size;
     }
     
     /**
@@ -39,7 +32,7 @@ class PlainAvatar extends Avatar {
     
     protected function draw()
     {
-        $resource = imagecreatetruecolor($this->getWidth(), $this->getHeight());
+        $resource = imagecreatetruecolor($this->getSize(), $this->getSize());
         $color = $this->randomizeColor($resource);
         imagefill($resource, 0, 0, $color);
         

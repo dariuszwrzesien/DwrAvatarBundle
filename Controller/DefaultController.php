@@ -21,7 +21,7 @@ class DefaultController extends Controller
     {
         
         $avatar = new AvatarFactory();
-        $plainAvatar = $avatar->generate(new PlainAvatar(140, 140));
+        $plainAvatar = $avatar->generate(new PlainAvatar(140));
         
         return array(
             'plainAvatar' => $plainAvatar->render()

@@ -13,7 +13,7 @@ class PlainAvatarTest extends PHPUnit_Framework_TestCase
     
     public function setUp() {
         parent::setUp();
-        $this->plainAvatar = new PlainAvatar(1, 1);
+        $this->plainAvatar = new PlainAvatar(1);
     }
     
     public function testGetAvatar()
@@ -48,13 +48,11 @@ class PlainAvatarTest extends PHPUnit_Framework_TestCase
         unlink($file->getRealPath());
     }
     
-    public function testSettersAndGetters()
+    public function testSetAndGetSize()
     {
-        $this->plainAvatar->setWidth(5);
-        $this->plainAvatar->setHeight(5);
+        $this->plainAvatar->setSize(5);
         
-        $this->assertSame(5, $this->plainAvatar->getWidth());
-        $this->assertSame(5, $this->plainAvatar->getHeight());
+        $this->assertSame(5, $this->plainAvatar->getSize());
     }
     
 }

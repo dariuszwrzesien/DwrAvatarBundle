@@ -5,37 +5,21 @@ namespace Dwr\AvatarBundle\Model;
 abstract class Avatar {
     
     /**
-     * @param int $width
+     * @param int $size
      */
-    public function setWidth($width)
+    public function setSize($size)
     {
-        $this->width = $width;
+        $this->size = $size;
     }
     
     /**
      * @return int
      */
-    public function getWidth()
+    public function getSize()
     {
-        return $this->width;
+        return $this->size;
     }
 
-    /**
-     * @param int $height
-     */
-    public function setHeight($height)
-    {
-        $this->height = $height;
-    }
-    
-    /**
-     * @return int
-     */
-    public function getHeight()
-    {
-        return $this->height;
-    }
-    
     /**
      * @return string
      */
