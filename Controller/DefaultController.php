@@ -4,6 +4,7 @@ namespace Dwr\AvatarBundle\Controller;
 
 use Dwr\AvatarBundle\Model\AvatarFactory;
 use Dwr\AvatarBundle\Model\PlainAvatar;
+use Dwr\AvatarBundle\Model\ProfileAvatar;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
