@@ -53,8 +53,7 @@ class PlainAvatar extends Avatar {
     
     private function createBackground()
     {
-        $white = ['r' => 255, 'g' => 255, 'b' => 255];
-        $backgroundColor = $this->randomizeColor($this->canvas, $white);
+        $backgroundColor = $this->randomizeColor($this->canvas, Avatar::$WHITE);
         imagefill($this->canvas, 0, 0, $backgroundColor);
     }
     
