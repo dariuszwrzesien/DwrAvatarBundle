@@ -25,13 +25,13 @@ abstract class Avatar {
      */
     public function render()
     {
-        return base64_encode($this->getContent());
+        return base64_encode($this->getPicture());
     }
     
-    private function getContent()
+    private function getPicture()
     {
-        if($this->content){
-            return $this->content;
+        if($this->picture){
+            return $this->picture;
         }
         
         return $this->draw();

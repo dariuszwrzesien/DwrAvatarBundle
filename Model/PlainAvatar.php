@@ -12,7 +12,13 @@ class PlainAvatar extends Avatar {
     /**
      * @var string 
      */
-    protected $content;
+    protected $picture;
+    
+    /**
+     * @var resource
+     */
+    protected $canvas;
+    
 
     /**
      * @param int $size
@@ -20,6 +26,7 @@ class PlainAvatar extends Avatar {
     public function __construct($size) 
     {
         $this->size = $size;
+        $this->canvas = imagecreatetruecolor($this->getSize(), $this->getSize());
     }
     
     /**
@@ -32,36 +39,42 @@ class PlainAvatar extends Avatar {
     
     protected function draw()
     {
-        $resource = imagecreatetruecolor($this->getSize(), $this->getSize());
-        $color = $this->randomizeColor($resource);
-        imagefill($resource, 0, 0, $color);
+        $this->createBackground();
         
         ob_start(); 
-            imagejpeg($resource);
+            imagejpeg($this->canvas);
             $image = ob_get_contents(); 
         ob_end_clean();
         
-        $this->content = $image;
+        $this->picture = $image;
         
-        return $this->content;
+        return $this->picture;
+    }
+    
+    private function createBackground()
+    {
+        $white = ['r' => 255, 'g' => 255, 'b' => 255];
+        $backgroundColor = $this->randomizeColor($this->canvas, $white);
+        imagefill($this->canvas, 0, 0, $backgroundColor);
     }
     
     /**
      * @param resource $resource
+     * @param array $mixColor
      * @return int 
      */
-    private function randomizeColor($resource)
+    private function randomizeColor($resource, array $mixColor)
     {
-        // Mixing random colors with white (255, 255, 255) creates neutral pastels 
-        // by increasing the lightness while keeping the hue of the original color. 
+        /**
+         * Mixing random colors with white (255, 255, 255) creates neutral pastels
+         * by increasing the lightness while keeping the hue of the original color.
+         * $mix = ['r' => 255, 'g' => 255, 'b' => 255]; // white
+         */
         
-        $mix = ['r' => 255, 'g' => 255, 'b' => 255]; // white
-        
-        $red   = (rand(0, 255) + $mix['r']) /2;
-        $green = (rand(0, 255) + $mix['g']) /2;
-        $blue  = (rand(0, 255) + $mix['b']) /2;
+        $red   = (rand(0, 255) + $mixColor['r']) /2;
+        $green = (rand(0, 255) + $mixColor['g']) /2;
+        $blue  = (rand(0, 255) + $mixColor['b']) /2;
         
         return imagecolorallocate($resource, $red, $green, $blue);
     }
-    
 }
