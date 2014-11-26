@@ -4,6 +4,9 @@ namespace Dwr\AvatarBundle\Model;
 
 abstract class Avatar {
     
+    public static $WHITE = ['r' => 255, 'g' => 255, 'b' => 255];
+    public static $GREY  = ['r' => 100, 'g' => 100, 'b' => 100];
+    
     /**
      * @param int $size
      */

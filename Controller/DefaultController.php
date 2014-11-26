@@ -19,12 +19,13 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        
         $avatar = new AvatarFactory();
         $plainAvatar = $avatar->generate(new PlainAvatar(140));
+        $profileAvatar = $avatar->generate(new ProfileAvatar(140));
         
         return array(
-            'plainAvatar' => $plainAvatar->render()
+            'plainAvatar' => $plainAvatar->render(),
+            'profileAvatar' => $profileAvatar->render()
         );
     }
 }
