@@ -63,7 +63,7 @@ class PlainAvatar extends Avatar {
      * @param array $mixColor
      * @return int 
      */
-    protected function randomizeColor($resource, array $mixColor)
+    private function randomizeColor($resource, array $mixColor)
     {
         /**
          * Mixing random colors with white (255, 255, 255) creates neutral pastels
