@@ -63,7 +63,7 @@ class ProfileAvatar extends Avatar {
     private function createProfileImage()
     {
         $imageMapFields = $this->randomFillIn();
-        $imageCellSize = $this->getSize()/self::FIELDS_ARRAY_DIMENSION;
+        $imageCellSize = $this->getSize()/self::FIELDS_DIVISION_PARTS;
         $imageColor = $this->randomizeColor($this->canvas, Avatar::$GREY);
         
         //function colorize avatar by mapping $fields to resource
