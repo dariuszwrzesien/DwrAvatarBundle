@@ -7,7 +7,7 @@ DwrAvatarBundle
 ======================
 
 This bundle provides easy image avatar generator support for Symfony2.
-If you want to generate simple plain color Avatar you can:
+If you want to generate Avatar you can:
 
 **In Controller**
 
@@ -16,10 +16,16 @@ public function indexAction()
     {
         
         $avatar = new AvatarFactory();
-        $plainAvatar = $avatar->generate(new PlainAvatar(140, 140));
+
+        //for plainAvatar
+        $plainAvatar = $avatar->generate(new PlainAvatar(140, 140)); 
+
+        //for profileAvatar
+        $profileAvatar = $avatar->generate(new ProfileAvatar(140, 140));
         
         return array(
-            'plainAvatar' => $plainAvatar->render()
+            'plainAvatar'   => $plainAvatar->render()
+            'profileAvatar' => $profileAvatar->render()
         );
     }
 ```
@@ -28,6 +34,7 @@ And in a **view** file (twig):
 
 ``` jinja
 <img src="data:image/jpg;base64,{{ plainAvatar }}" >
+<img src="data:image/jpg;base64,{{ profileAvatar }}" >
 ```
 
 ## **Installation**
@@ -97,10 +104,16 @@ public function indexAction()
     {
         
         $avatar = new AvatarFactory();
-        $plainAvatar = $avatar->generate(new PlainAvatar(140, 140));
+
+        //for plainAvatar
+        $plainAvatar = $avatar->generate(new PlainAvatar(140, 140)); 
+
+        //for profileAvatar
+        $profileAvatar = $avatar->generate(new ProfileAvatar(140, 140));
         
         return array(
-            'plainAvatar' => $plainAvatar->render()
+            'plainAvatar'   => $plainAvatar->render()
+            'profileAvatar' => $profileAvatar->render()
         );
     }
 ```
@@ -109,6 +122,7 @@ public function indexAction()
 
 ``` jinja
 <img src="data:image/jpg;base64,{{ plainAvatar }}" >
+<img src="data:image/jpg;base64,{{ profileAvatar }}" >
 ```
 
 Example how to generate avatars in base64 stream is also stored in AvatarBundle/Controller/DefaultController.php.
