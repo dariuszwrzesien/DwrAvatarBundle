@@ -66,101 +66,27 @@ class ProfileAvatar extends Avatar {
         $imageCellSize = $this->getSize()/self::FIELDS_DIVISION_PARTS;
         $imageColor = $this->randomizeColor($this->canvas, Avatar::$GREY);
         
-        //function colorize avatar by mapping $fields to resource
-            
-        $counter = 0;
         $coordinates = array(
             'x1' => 0, 'y1' => 0, 
             'x2' => $imageCellSize, 'y2' => $imageCellSize,
         );
         
-        foreach($imageMapFields as $field){
-            if($counter < 5){
-                if($field){
-                    $this->filledRectangle($coordinates, $imageColor);
-                }
+        $counter = 0;
+        foreach ($imageMapFields as $field) {
+            if($counter % 5 !== 0){
                 $coordinates['x1'] += $imageCellSize;
                 $coordinates['x2'] += $imageCellSize;
-            }
-            if ($counter == 5){
-                $coordinates = array(
-                    'x1' => 0, 'y1' => $imageCellSize, 
-                    'x2' => $imageCellSize, 'y2' => 2*$imageCellSize,
-                );                  
-                if($field){
-                    $this->filledRectangle($coordinates, $imageColor);
+                $this->filledRectangle($coordinates, $imageColor, $field);
+            } else {
+                if ($counter > 0) {
+                    $coordinates = array(
+                        'x1' => 0, 'y1' => $coordinates['y1'] += $imageCellSize, 
+                        'x2' => $imageCellSize, 'y2' => $coordinates['y2'] += $imageCellSize,
+                    );
                 }
-            }
-            if($counter > 5 && $counter < 10){
-
-                $coordinates['x1'] += $imageCellSize;
-                $coordinates['x2'] += $imageCellSize;
-
-                if($field){
-                    $this->filledRectangle($coordinates, $imageColor);
-                }
-
-            }
-            if ($counter == 10){
-                $coordinates = array(
-                    'x1' => 0, 'y1' => 2*$imageCellSize, 
-                    'x2' => $imageCellSize, 'y2' => 3*$imageCellSize,
-                );                  
-                if($field){
-                    $this->filledRectangle($coordinates, $imageColor);
-                }
-            }
-            if($counter > 10 && $counter < 15){
-
-                $coordinates['x1'] += $imageCellSize;
-                $coordinates['x2'] += $imageCellSize;
-
-                if($field){
-                    $this->filledRectangle($coordinates, $imageColor);
-                }
-
-            }
-
-            if ($counter == 15){
-                $coordinates = array(
-                    'x1' => 0, 'y1' => 3*$imageCellSize, 
-                    'x2' => $imageCellSize, 'y2' => 4*$imageCellSize,
-                );                  
-                if($field){
-                    $this->filledRectangle($coordinates, $imageColor);
-                }
-            }
-            if($counter > 15 && $counter < 20){
-
-                $coordinates['x1'] += $imageCellSize;
-                $coordinates['x2'] += $imageCellSize;
-
-                if($field){
-                    $this->filledRectangle($coordinates, $imageColor);
-                }
-
-            }
-            if ($counter == 20){
-                $coordinates = array(
-                    'x1' => 0, 'y1' => 4*$imageCellSize, 
-                    'x2' => $imageCellSize, 'y2' => 5*$imageCellSize,
-                );                  
-                if($field){
-                    $this->filledRectangle($coordinates, $imageColor);
-                }
-            }
-            if($counter > 20 && $counter < 25){
-
-                $coordinates['x1'] += $imageCellSize;
-                $coordinates['x2'] += $imageCellSize;
-
-                if($field){
-                    $this->filledRectangle($coordinates, $imageColor);
-                }
-
+                $this->filledRectangle($coordinates, $imageColor, $field);
             }
             $counter++;
-
         }
     }
     
@@ -185,16 +111,18 @@ class ProfileAvatar extends Avatar {
         return imagecolorallocate($canvas, $red, $green, $blue);
     }
     
-    private function filledRectangle(array $coordinates, $color)
+    private function filledRectangle(array $coordinates, $color, $field)
     {
-        imagefilledrectangle(
-            $this->canvas, 
-            $coordinates['x1'], 
-            $coordinates['y1'], 
-            $coordinates['x2'], 
-            $coordinates['y2'], 
-            $color
-        );
+        if ($field) {
+            imagefilledrectangle(
+                $this->canvas, 
+                $coordinates['x1'], 
+                $coordinates['y1'], 
+                $coordinates['x2'], 
+                $coordinates['y2'], 
+                $color
+            );
+        }
     }
     
     /**
@@ -203,16 +131,17 @@ class ProfileAvatar extends Avatar {
     private function randomFillIn()
     {
         /**
-         * Output: $random = array(
-         *             array((bool)rand(0,1), (bool)rand(0,1)),
-         *             array((bool)rand(0,1), (bool)rand(0,1)),
-         *             array((bool)rand(0,1), (bool)rand(0,1))
-         *             array((bool)rand(0,1), (bool)rand(0,1))
-         *             array((bool)rand(0,1), (bool)rand(0,1))
-         *         );
+         * Output: 
+         * $random = array(
+         *     array((bool)rand(0,1), (bool)rand(0,1)),
+         *     array((bool)rand(0,1), (bool)rand(0,1)),
+         *     array((bool)rand(0,1), (bool)rand(0,1))
+         *     array((bool)rand(0,1), (bool)rand(0,1))
+         *     array((bool)rand(0,1), (bool)rand(0,1))
+         * );
          */
         $random = array();
-        for($i = 0; $i < 5; $i++){
+        for($i = 0; $i < self::FIELDS_DIVISION_PARTS; $i++){
             for($j = 0; $j < 2; $j++){
                $random[$i][$j] = (bool)rand(0,1);
             }
