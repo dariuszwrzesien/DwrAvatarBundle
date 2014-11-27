@@ -10,14 +10,14 @@ This bundle provides easy image avatar generator support for Symfony2.
 Example of avatars:
 
 plainAvatars:
-![plainAvatar example #1](Resources/doc/plain1.png)&nbsp;&nbsp;
-![plainAvatar example #2](Resources/doc/plain2.png)&nbsp;&nbsp;
-![plainAvatar example #3](Resources/doc/plain3.png)&nbsp;&nbsp;
+![plainAvatar example #1](Resources/doc/plain1.jpg)&nbsp;&nbsp;
+![plainAvatar example #2](Resources/doc/plain2.jpg)&nbsp;&nbsp;
+![plainAvatar example #3](Resources/doc/plain3.jpg)&nbsp;&nbsp;
 
 profileAvatars
-![profileAvatar example #1](Resources/doc/profile1.png)&nbsp;&nbsp;
-![profileAvatar example #2](Resources/doc/profile2.png)&nbsp;&nbsp;
-![profileAvatar example #3](Resources/doc/profile3.png)&nbsp;&nbsp
+![profileAvatar example #1](Resources/doc/profile1.jpg)&nbsp;&nbsp;
+![profileAvatar example #2](Resources/doc/profile2.jpg)&nbsp;&nbsp;
+![profileAvatar example #3](Resources/doc/profile3.jpg)&nbsp;&nbsp
 
 In order to generate Avatar you can:
 
@@ -64,7 +64,7 @@ Add DwrAvatarBundle in your composer.json:
 ```js
 {
     "require": {
-        "dwr/avatar-bundle": "0.2"
+        "dwr/avatar-bundle": "1.0"
     }
 }
 ```
