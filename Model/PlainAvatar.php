@@ -57,23 +57,4 @@ class PlainAvatar extends Avatar {
         imagefill($this->canvas, 0, 0, $backgroundColor);
     }
     
-    /**
-     * @param resource $resource
-     * @param array $mixColor
-     * @return int 
-     */
-    private function randomizeColor($resource, array $mixColor)
-    {
-        /**
-         * Mixing random colors with white (255, 255, 255) creates neutral pastels
-         * by increasing the lightness while keeping the hue of the original color.
-         * $mix = ['r' => 255, 'g' => 255, 'b' => 255]; // white
-         */
-        
-        $red   = (rand(0, 255) + $mixColor['r']) /2;
-        $green = (rand(0, 255) + $mixColor['g']) /2;
-        $blue  = (rand(0, 255) + $mixColor['b']) /2;
-        
-        return imagecolorallocate($resource, $red, $green, $blue);
-    }
 }

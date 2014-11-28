@@ -5,7 +5,7 @@ namespace Dwr\AvatarBundle\Model;
 class ProfileAvatar extends Avatar {
     
     
-    const FIELDS_DIVISION_PARTS = 5;
+    const PROFILE_IMAGE_RESOLUTION = 5;
     
     /**
      * @var int 
@@ -63,7 +63,7 @@ class ProfileAvatar extends Avatar {
     private function createProfileImage()
     {
         $imageMapFields = $this->randomFillIn();
-        $imageCellSize = $this->getSize()/self::FIELDS_DIVISION_PARTS;
+        $imageCellSize = $this->getSize()/self::PROFILE_IMAGE_RESOLUTION;
         $imageColor = $this->randomizeColor($this->canvas, Avatar::$GREY);
         
         $coordinates = array(
@@ -73,7 +73,7 @@ class ProfileAvatar extends Avatar {
         
         $counter = 0;
         foreach ($imageMapFields as $field) {
-            if($counter % 5 !== 0){
+            if ($counter % 5 !== 0) {
                 $coordinates['x1'] += $imageCellSize;
                 $coordinates['x2'] += $imageCellSize;
                 $this->filledRectangle($coordinates, $imageColor, $field);
@@ -88,27 +88,6 @@ class ProfileAvatar extends Avatar {
             }
             $counter++;
         }
-    }
-    
-    /**
-     * @param resource $canvas
-     * @param array $mixColor
-     * @return int
-     */
-    private function randomizeColor($canvas, $mixColor)
-    {
-        /**
-         * MixColor:
-         * Mixing random colors with white (255, 255, 255) creates neutral pastels 
-         * by increasing the lightness while keeping the hue of the original color. 
-         * $mixColor = ['r' => 255, 'g' => 255, 'b' => 255]; // white
-         */
-        
-        $red   = (rand(100, 255) + $mixColor['r']) /2;
-        $green = (rand(100, 255) + $mixColor['g']) /2;
-        $blue  = (rand(100, 255) + $mixColor['b']) /2;
-        
-        return imagecolorallocate($canvas, $red, $green, $blue);
     }
     
     private function filledRectangle(array $coordinates, $color, $field)
@@ -141,8 +120,8 @@ class ProfileAvatar extends Avatar {
          * );
          */
         $random = array();
-        for($i = 0; $i < self::FIELDS_DIVISION_PARTS; $i++){
-            for($j = 0; $j < 2; $j++){
+        for ($i = 0; $i < self::PROFILE_IMAGE_RESOLUTION; $i++) {
+            for ($j = 0; $j < 2; $j++) {
                $random[$i][$j] = (bool)rand(0,1);
             }
         }
