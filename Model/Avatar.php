@@ -66,6 +66,27 @@ abstract class Avatar {
     }
     
     /**
+     * @param resource $canvas
+     * @param array $mixColor
+     * @return int
+     */
+    protected function randomizeColor($canvas, $mixColor)
+    {
+        /**
+         * MixColor:
+         * Mixing random colors with white (255, 255, 255) creates neutral pastels 
+         * by increasing the lightness while keeping the hue of the original color. 
+         * $mixColor = ['r' => 255, 'g' => 255, 'b' => 255]; // white
+         */
+        
+        $red   = (rand(100, 255) + $mixColor['r']) /2;
+        $green = (rand(100, 255) + $mixColor['g']) /2;
+        $blue  = (rand(100, 255) + $mixColor['b']) /2;
+        
+        return imagecolorallocate($canvas, $red, $green, $blue);
+    }
+    
+    /**
      * @return Avatar
      */
     abstract public function getAvatar();

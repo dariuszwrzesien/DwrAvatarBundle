@@ -7,6 +7,7 @@ DwrAvatarBundle
 ======================
 
 This bundle provides easy image avatar generator support for Symfony2.
+
 Example of avatars:
 
 plainAvatars:
