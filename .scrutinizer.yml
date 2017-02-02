@@ -3,6 +3,10 @@ filter:
     excluded_paths: [vendor/*, Tests/*]
 before_commands:
     - 'composer install --dev --prefer-source'
+checks:
+    php:
+        code_rating: true
+        duplication: true
 tools:
     php_mess_detector: true
     php_code_sniffer: true
@@ -15,4 +19,3 @@ tools:
     php_cpd:
         enabled: true
         excluded_dirs: [vendor]
-
