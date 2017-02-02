@@ -1,6 +1,6 @@
 {
     "name":         "dwr/avatar-bundle",
-    "description":  "Simply symfony3 bundle which creates avatars images using GD.",
+    "description":  "Simply symfony 2&3 bundle which creates avatars images using GD.",
     "keywords":     ["avatar", "avatar generator", "image"],
     "homepage":     "https://github.com/dariuszwrzesien/DwrAvatarBundle.git",
     "type":         "symfony-bundle",
