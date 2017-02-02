@@ -6,7 +6,7 @@
 DwrAvatarBundle
 ======================
 
-This bundle provides easy image avatar generator support for Symfony2.
+This bundle provides easy image avatar generator support for Symfony2 and Symfony3.
 
 Example of avatars:
 
@@ -62,7 +62,18 @@ Installation is a quick 3 steps process:
 
 ### Step 1: Download DwrAvatarBundle using composer
 
-Add DwrAvatarBundle in your composer.json:
+Add DwrAvatarBundle in version 2.0 (**for Symfony 3**) in your composer.json:
+
+```js
+{
+    "require": {
+        "dwr/avatar-bundle": "2.0"
+    }
+}
+```
+
+
+Add DwrAvatarBundle in version 1.0 (**for Symfony 2**)  your composer.json:
 
 ```js
 {
@@ -106,7 +117,7 @@ dwr_avatar:
     prefix:   /dwr_avatarbundle
 ```
 
-Congratulations! You're ready to generate avatars in your symfony2 application.
+Congratulations! You're ready to generate avatars in your symfony application.
 Example how PlainAvatar looks like you can find on: yours-application-url/dwr_avatarbundle/avatar .
 
 ## **Usage**
