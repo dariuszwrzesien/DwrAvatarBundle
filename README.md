@@ -86,7 +86,7 @@ Add DwrAvatarBundle in version 1.0 (**for Symfony 2**)  your composer.json:
 Download the bundle by running the command:
 
 ``` bash
-$ php composer.phar update dwr/avatar-bundle
+$ php composer.phar require dwr/avatar-bundle
 ```
 
 Composer will install the bundle into your project's `vendor/dwr/avatar-bundle` directory.
