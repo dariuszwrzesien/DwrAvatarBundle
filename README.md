@@ -1,8 +1,16 @@
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/12b57070-5a37-4bdb-a8b3-aeddfdddcfff/big.png)](https://insight.sensiolabs.com/projects/12b57070-5a37-4bdb-a8b3-aeddfdddcfff)
 ======================
+[![License](https://poser.pugx.org/dwr/avatar-bundle/license)](https://packagist.org/packages/dwr/avatar-bundle)
+[![Latest Stable Version](https://poser.pugx.org/dwr/avatar-bundle/v/stable)](https://packagist.org/packages/dwr/avatar-bundle)
+[![Total Downloads](https://poser.pugx.org/dwr/avatar-bundle/downloads)](https://packagist.org/packages/dwr/avatar-bundle)
 [![Build Status](https://travis-ci.org/dariuszwrzesien/DwrAvatarBundle.svg?branch=master)](https://travis-ci.org/dariuszwrzesien/DwrAvatarBundle)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dariuszwrzesien/DwrAvatarBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/dariuszwrzesien/DwrAvatarBundle/?branch=master)
 [![Coverage Status](https://coveralls.io/repos/dariuszwrzesien/DwrAvatarBundle/badge.png)](https://coveralls.io/r/dariuszwrzesien/DwrAvatarBundle)
+[![composer.lock](https://poser.pugx.org/dwr/avatar-bundle/composerlock)](https://packagist.org/packages/dwr/avatar-bundle)
+======================
+[![Monthly Downloads](https://poser.pugx.org/dwr/avatar-bundle/d/monthly)](https://packagist.org/packages/dwr/avatar-bundle)
+[![Daily Downloads](https://poser.pugx.org/dwr/avatar-bundle/d/daily)](https://packagist.org/packages/dwr/avatar-bundle)
+
 DwrAvatarBundle
 ======================
 
