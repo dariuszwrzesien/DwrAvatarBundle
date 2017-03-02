@@ -201,6 +201,10 @@ public function indexAction()
     }
 ```
 
+### Change log
+
+Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+
 ### Troubleshooting
 
 1. Make sure you have [GD](http://php.net/manual/en/book.image.php) installed on your web server.
