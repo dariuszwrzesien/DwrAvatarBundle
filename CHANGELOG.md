@@ -3,7 +3,7 @@
 - Compatibility with Symfony 3.x
 
 ### Changed
-- This version is no longer compatable with Symfony 2.x. In order to use in Symfony 2.x, use varsion 1.0.
+- This version is no longer compatable with Symfony 2.x. In order to use in Symfony 2.x, use version 1.0.
 
 ## [1.0] - 2014-11-27
 ### Added
